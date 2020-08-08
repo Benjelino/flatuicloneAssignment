@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="navbar">
+        <nav >
+            <button>Back</button>
+            <select name="selector" id="choose">
+                <option value="">#RGBA</option>
+                <option value="">#RGB</option>
+                <option value="">#HSL</option>
+
+            </select>
+        </nav>
+    </div>
+    
+    <div id="root"></div>
+        <div class="footer">
+         <footer>
+             <p> &copy; Hafsat</p>
+            </footer>
+        </div>
+    <script type="text/jsx">
+      
+const data=[
+            {id: 1, color: "#FEA47F", text: "Orchid Orange"},
+            {id: 2, color: "#25CCF7",text: "Spiro Disco Ball"},
+            {id: 3, color: "#EAB543", text: "Honey Glow"},
+            {id: 4, color: "#55E6C1", text: "Sweet Garden"},
+            {id: 5, color: "#CAD3C8",text: "Falling Star"},
+            {id: 6, color: "#F97F51", text: "Rich Gardenia"},
+            {id: 7, color: "#1B9CFC",text: "Clear Chill"},
+            {id: 8, color: "#F8EFBA", text: "Sarawak White pepper"},
+            {id: 9, color: "#58B19F", text: "Keppel"},
+            {id: 10, color: "#2C3A47", text: "Ship's Officer"},
+            {id: 11, color: "#B33771", text: "Fiery Fuchsia"},
+            {id: 12, color: "#3B3B98", text: "Bluebell"},
+            {id: 13, color: "#FD7272", text: "Georgia Peach"},
+            {id: 14, color: "#9AECDB", text: "Oasis Stream"},
+            {id: 15, color: "#D6A2E8", text: "Bright Ube"},
+            {id: 16, color: "#6D214F", text: "Magenta Purple"},
+            {id: 17, color: "#182C61", text: "Ending Navy Blue"},
+            {id: 18, color: "#FC427B", text: "Sasquatch Socks"},
+            {id: 19, color: "#BDC581", text: "Pine Glade"},
+            {id: 20, color: "#82589F", text: "Highlighter Lavender"}
+            ];
+
+        window.onload=function init() {        
+            let copy = document.getElementsByClassName("copy");
+            let container = document.getElementsByClassName("container");    
+            for (var i = 0; i < copy.length; i++) { 
+                copy[i].style.visibility ="hidden";       
+                container[i].onmouseover = reHide; 
+                container[i].onmouseout = showCopy;            
+            }   
+        }    
+        function showCopy(eventObj) {        
+            let mDiv = eventObj.target;      
+            let element = mDiv.getElementsByClassName("copy");
+            for (let i = 0; i < element.length; i++){
+                element[i].style.visibility = "hidden";
+            } 
+        }  
+        function reHide(eventObj) {    
+            let mDiv = eventObj.target;      
+            let element = mDiv.getElementsByClassName("copy");
+            for (let i = 0; i < element.length; i++){
+                element[i].style.visibility = "visible";
+            }
+        }
+
+       function App(props){
+           console.log(props)
+           return (
+               <div className="container" style={{backgroundColor:props.color}}>
+                   <a href="" class="copy" >copy</a>
+                <p>{props.text}</p>
+                </div>
+           );
+       }
+
+       let appList=data.map(i=> <App key={i.id} color={i.color} text={i.text} />);
+      ReactDOM.render(
+          <React.StrictMode>
+          {appList}
+        </React.StrictMode>, document.getElementById ("root"));
+    </script>
+
+</body>
+</html>

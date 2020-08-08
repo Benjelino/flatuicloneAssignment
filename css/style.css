@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.container{
+    margin: auto 0px;
+    width: 20%;
+    height: 24vh;
+    float: left;
+    position: relative;
+}
+
+p{
+    text-transform: uppercase;
+    color: white;
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    font-family: Barlow;
+    margin-right: 7px;
+    margin-bottom: 7px;
+}
+
+a{
+    border: 1px solid white;
+    border-radius: 3px;
+    padding: 7px;
+    text-decoration: none;
+    font-family: Barlow;
+    position: absolute;
+    left: 40%;
+    bottom: 40%;
+    color: white;
+    text-transform: uppercase;
+}
+.navbar{
+   
+    display: inline;
+}  
+button{
+    border: solid 1px;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 5px 0px;
+    background-color: chartreuse;
+}
+select{
+    text-decoration: blanchedalmond;
+    text-align-last: center;
+    width: 100px;
+    position: relative;
+    left: 40%;
+    border: solid 1px;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 5px 0px;
+}
+
+footer{
+    width: 40%;
+    text-align-last: left;
+}
